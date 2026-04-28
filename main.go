@@ -27,7 +27,10 @@ func main() {
 		banner_name = gen2.LowerCase(os.Args[2])
 	}
 
-	fmt.Println(input_string)
-	fmt.Println(banner_name)
+	banner_type  = map[int]string{
+		1:"standard.txt",
+		2:"shadow.txt",
+		3:"thinkertoy.txt",
+	}
 
 }
