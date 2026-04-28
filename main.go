@@ -16,10 +16,6 @@ var (
 func main() {
 
 	switch len(os.Args) {
-	case 1:
-		fmt.Println("\n Usage: go run . <words to process to design.>  <file name of the design type.> \n E.g. go run . Hello  shadow.txt \n Or   go run . Hello")
-		return
-
 	case 2:
 		input_string = os.Args[1]
 		first_banner_name = "standard"
