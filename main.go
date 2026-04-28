@@ -7,9 +7,10 @@ import (
 )
 
 var (
-	input_string string
-	banner_name  string
-	banner_type  map[int]string
+	input_string       string
+	first_banner_name  string
+	second_banner_name string
+	third_banner_name  string
 )
 
 func main() {
@@ -21,16 +22,26 @@ func main() {
 
 	case 2:
 		input_string = os.Args[1]
+		first_banner_name = "standard"
 
 	case 3:
 		input_string = os.Args[1]
-		banner_name = gen2.LowerCase(os.Args[2])
+		first_banner_name = gen2.LowerCase(os.Args[2])
+
+	case 4:
+		input_string = os.Args[1]
+		first_banner_name = gen2.LowerCase(os.Args[2])
+		second_banner_name = gen2.LowerCase(os.Args[3])
+
+	case 5:
+		input_string = os.Args[1]
+		first_banner_name = gen2.LowerCase(os.Args[2])
+		second_banner_name = gen2.LowerCase(os.Args[3])
+		third_banner_name = gen2.LowerCase(os.Args[4])
 	}
 
-	banner_type  = map[int]string{
-		1:"standard.txt",
-		2:"shadow.txt",
-		3:"thinkertoy.txt",
-	}
-
+	fmt.Println(input_string)
+	fmt.Println(first_banner_name)
+	fmt.Println(second_banner_name)
+	fmt.Println(third_banner_name)
 }
