@@ -5,12 +5,12 @@ import (
 	"strings"
 )
 
-func loadBanner(filename string) []string {
-	content, err := os.ReadFile(filename)
+func loadBanner(bannerName string) []string {
+	content, err := os.ReadFile(bannerName)
 	if err != nil {
 		logErr(err)
 	}
 
-	data := strings.Split(string(content), "\n")
-	return data
+	bannerLines := strings.Split(string(content), "\n")
+	return bannerLines
 }

@@ -41,15 +41,15 @@ func main() {
 		return
 	}
 
+	bannerLines := loadBanner("banners/" + firstBannerName + ".txt")
+
 	inputtedTextSlice := strings.Split(inputtedText, `\n`)
 	for i := range inputtedTextSlice {
 		if inputtedTextSlice[i] == "" {
 			fmt.Println()
 		} else {
-			renderLine()
+			renderLine(inputtedTextSlice[i], bannerLines)
 		}
 	}
-
-	_ = loadBanner("banners/" + firstBannerName + ".txt")
 
 }

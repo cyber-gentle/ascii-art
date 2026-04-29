@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func getCharRows(ch rune, bannerLines []string) []string {
 	index := int(ch) - 32
 	start := index * 9
@@ -7,6 +9,12 @@ func getCharRows(ch rune, bannerLines []string) []string {
 
 }
 
-func renderLine() {
+func renderLine(word string, bannerLines []string) {
+	var row []string
 
+	wordsSlice := []rune(word)
+	for _, char := range wordsSlice {
+		row = getCharRows(char, bannerLines)
+	}
+	fmt.Println(row)
 }
