@@ -40,11 +40,6 @@ func main() {
 		return
 	}
 
-	content, err := os.ReadFile("banners/" + first_banner_name + ".txt")
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	fmt.Println(string(content))
+	content := loadBanner("banners/" + first_banner_name + ".txt")
 
 }
