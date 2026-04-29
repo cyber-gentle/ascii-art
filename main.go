@@ -4,10 +4,11 @@ import (
 	"ascii-art/gen2"
 	"fmt"
 	"os"
+	"strings"
 )
 
 var (
-	inputtedText       string
+	inputtedText     string
 	firstBannerName  string
 	secondBannerName string
 	thirdBannerName  string
@@ -40,6 +41,15 @@ func main() {
 		return
 	}
 
-	content := loadBanner("banners/" + firstBannerName + ".txt")
+	inputtedTextSlice := strings.Split(inputtedText, `\n`)
+	for i := range inputtedTextSlice {
+		if inputtedTextSlice[i] == "" {
+			fmt.Println()
+		} else {
+			renderLine()
+		}
+	}
+
+	_ = loadBanner("banners/" + firstBannerName + ".txt")
 
 }
