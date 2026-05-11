@@ -11,7 +11,7 @@ func main() {
 		input      string
 		bannerName string
 		validated  bool
-		err error
+		err        error
 	)
 
 	switch len(os.Args) {
@@ -22,6 +22,10 @@ func main() {
 	case 3:
 		input = os.Args[1]
 		bannerName = os.Args[2]
+
+	default:
+		fmt.Println("Usage go run . <text> <bannertype>.")
+		return
 	}
 
 	bannerMap, err := processor.LoadBanner(bannerName)
